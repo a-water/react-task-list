@@ -1,0 +1,7 @@
+@import 'variables';
+
+.container {
+  background: darken($color: $background-color, $amount: 2);
+  width: 700px;
+  height: 700px;
+}
