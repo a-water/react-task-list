@@ -4,17 +4,23 @@
   background: lighten($color: $background-color, $amount: 2);
   width: 700px;
   height: 700px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.input-form-parent {
+  width: 80%;
+  display: flex;
+  align-items: center;
 }
 
 .input-form {
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  width: 85%;
   margin-top: 30px;
 
   input[type="text"] {
-    width: 70%;
+    width: 80%;
     height: 40px;
     box-sizing: border-box;
     padding-left: 10px;
@@ -22,7 +28,7 @@
   }
 
   input[type="submit"] {
-    width: 10%;
+    width: 20%;
     height: 40px;
     -webkit-appearance: none;
     background: $all-good-color;
@@ -34,18 +40,17 @@
   color: $title-color;
   font-size: 1.6em;
   margin-top: 50px;
-  width: 80%;
-  margin-left: $todo-left-margin;
+  width: 85%;
 }
 
 .todo-list {
   margin-top: 30px;
+  width: 85%;
 }
 
 .todo-group-item {
   display: flex;
   align-items: center;
-  margin-left: $todo-left-margin;
   border: 1px solid #b0ababa2;
 
   .labels {
@@ -61,11 +66,17 @@
   }
 }
 
-.todo-item {
-  width: 80%;
-  height: 40px;
+.todo-task-item {
+  height: 70px;
   background: lighten($color: $background-color, $amount: 20);
   margin-top: 10px;
   color: $title-color;
+  display: flex;
+  align-items: center;
 
+  img {
+    width: 21px;
+    margin-left: 10px;
+    margin-right: 20px;
+  }
 }

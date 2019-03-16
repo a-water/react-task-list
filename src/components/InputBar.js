@@ -25,7 +25,7 @@ class InputBar extends Component {
 
   render() {
     return(
-      <div>
+      <div className="input-form-parent">
         <form className="input-form" onSubmit={ this.handleOnSubmit }>
           <input type="text" placeholder="Enter task..." value={ this.state.taskTitle } onChange={ this.handleOnInputChange }></input>
           <input type="submit" value="Add"></input>
