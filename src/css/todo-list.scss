@@ -37,3 +37,15 @@
   width: 80%;  
 }
 
+.todo-list {
+
+}
+
+.todo-item {
+  width: 80%;
+  height: 40px;
+  background: lighten($color: $background-color, $amount: 20);
+  margin-top: 10px;
+  color: $title-color;
+
+}

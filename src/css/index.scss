@@ -1,10 +1,15 @@
 @import 'todo-list';
 @import 'variables';
 
+// google font import
+@import url('https://fonts.googleapis.com/css?family=Raleway');
+
+
 body {
   margin: 0;
   padding: 0;
   background: $background-color;
+  font-family: 'Raleway', sans-serif;
 }
 
 .App {

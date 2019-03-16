@@ -5,7 +5,7 @@ import starterData from '../data/data';
 class TodoList extends Component {
   renderTodoItems() {
     return starterData.map(item => {
-      return <TodoItem key={item.id} id={item.id} group={item.group} dependencyIds={item.dependencyIds} completedAt={item.completedAt} />
+      return <TodoItem key={item.id} id={item.id} group={item.group} task={item.task} dependencyIds={item.dependencyIds} completedAt={item.completedAt} />
     })
   }
 
