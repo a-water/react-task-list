@@ -17,15 +17,17 @@ class InputBar extends Component {
 
   }
 
-  handleOnInputChange() {
-
+  handleOnInputChange(e) {
+    this.setState({
+      taskTitle: e.target.value
+    })
   }
 
   render() {
     return(
       <div>
         <form className="input-form" onSubmit={ this.handleOnSubmit }>
-          <input type="text" placeholder="Enter task..." value={ this.state.taskTitle }></input>
+          <input type="text" placeholder="Enter task..." value={ this.state.taskTitle } onChange={ this.handleOnInputChange }></input>
           <input type="submit" value="Add"></input>
         </form>
       </div>
