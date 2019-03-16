@@ -4,8 +4,20 @@ import TodoGroupItem from './TodoGroupItem';
 import starterData from '../data/data';
 
 class TodoList extends Component {
-  renderTodoItems() {
-    return starterData.map(item => {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      isShowingTasks: false,
+      tasksToRender: []
+    }
+
+    this.handleGroupClicked = this.handleGroupClicked.bind(this);
+  }
+
+
+  renderTodoItems(tasks) {
+    return tasks.map(item => {
       return <TodoTaskItem key={item.id} id={item.id} group={item.group} task={item.task} dependencyIds={item.dependencyIds} completedAt={item.completedAt} />
     })
   }
@@ -14,7 +26,7 @@ class TodoList extends Component {
     const taskGroups = this.getTaskGroups();
     let todoGroupItems = [];
     for (const [group, tasks] of taskGroups) {
-      todoGroupItems.push(<TodoGroupItem groupName={group} tasks={tasks} key={group}/>);
+      todoGroupItems.push(<TodoGroupItem groupName={group} tasks={tasks} onClick={this.handleGroupClicked} key={group}/>);
     }
     return todoGroupItems;
   }
@@ -33,10 +45,17 @@ class TodoList extends Component {
     return groupMap;
   }
 
+  handleGroupClicked(tasks) {
+    this.setState({
+      isShowingTasks: true,
+      tasksToRender: tasks
+    })
+  }
+
   render() {
     return(
       <div className="todo-list">
-        { this.renderTodoGroups() }
+        { this.state.isShowingTasks ? this.renderTodoItems(this.state.tasksToRender) : this.renderTodoGroups() }
       </div>
     )
   }

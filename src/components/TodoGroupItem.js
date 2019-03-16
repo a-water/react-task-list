@@ -13,14 +13,12 @@ class TodoGroupItem extends Component {
     return `${completed} of ${tasks.length} completed`;
   }
 
-  render() {    
-    console.log('props', this.props);
-    
+  render() {
     return(
-      <div className="todo-group-item">
+      <div className="todo-group-item"  onClick={() => this.props.onClick(this.props.tasks) }>
         <img src={ require('../assets/Group.svg') } />
         <div className="labels">
-          <div>{ this.props.groupName }</div>
+          <div className="group-name">{ this.props.groupName }</div>
           <div>{ this.renderCompletedString(this.props.tasks) }</div>
         </div>
       </div>

@@ -46,9 +46,14 @@
   display: flex;
   align-items: center;
   margin-left: $todo-left-margin;
+  border: 1px solid #b0ababa2;
 
   .labels {
     margin-left: 50px;
+
+    .group-name {
+      font-weight: 900;
+    }
   }
 
   +.todo-group-item {
