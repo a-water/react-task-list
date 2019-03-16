@@ -34,11 +34,26 @@
   color: $title-color;
   font-size: 1.6em;
   margin-top: 50px;
-  width: 80%;  
+  width: 80%;
+  margin-left: $todo-left-margin;
 }
 
 .todo-list {
+  margin-top: 30px;
+}
 
+.todo-group-item {
+  display: flex;
+  align-items: center;
+  margin-left: $todo-left-margin;
+
+  .labels {
+    margin-left: 50px;
+  }
+
+  +.todo-group-item {
+    margin-top: 20px;
+  }
 }
 
 .todo-item {
